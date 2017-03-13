@@ -12,6 +12,14 @@ public class ElectricCar extends Car{
         return currentCharge;
     }
 
+    public void setBatteryCapacity(int settedBatteryCapacity){
+        batteryCapacity = settedBatteryCapacity;
+    }
+
+    public void setCurrentCharge(int settedCurrentCharge){
+        currentCharge = settedCurrentCharge;
+    }
+
     @Override
     public int getTankCapacity(){
         System.out.println("There is no tank in an electric car.");

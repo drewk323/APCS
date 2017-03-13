@@ -22,38 +22,89 @@ public class Vehicle {
         System.out.println("Gas: " + currentGasAmount + " gal");
         System.out.println("Range: " + fuelRange + " mi");
     }
+
     public void fillGas() {
         System.out.println("You filled your gas tank");
         System.out.println("You now have: " + currentGasAmount + " Gallons of Gas");
     }
+
     public String getMake() {
         return make;
     }
+
     public int getModelYear() {
         return modelYear;
     }
+
     public int getPrice() {
         return price;
     }
-    public int getWeight(){
+
+    public int getWeight() {
         return weight;
     }
-    public int getFuelRange(){
+
+    public int getFuelRange() {
         return fuelRange;
     }
-    public int getTankCapacity(){
+
+    public int getTankCapacity() {
         return tankCapacity;
     }
-    public int getCurrentGasAmount(){
+
+    public int getCurrentGasAmount() {
         return currentGasAmount;
     }
-    public int getMaxSpeed(){
+
+    public int getMaxSpeed() {
         return maxSpeed;
     }
-    public int getCurrentSpeed(){
+
+    public int getCurrentSpeed() {
         return currentSpeed;
     }
-    public boolean isDriving(){
+
+    public boolean isDriving() {
         return driving;
+    }
+
+    public void setMake(String settedMake){
+        make = settedMake;
+    }
+
+    public void setModelYear(int settedModelYear){
+        modelYear = settedModelYear;
+    }
+
+    public void setPrice(int settedPrice){
+        price = settedPrice;
+    }
+
+    public void setWeight(int settedWeight){
+        weight = settedWeight;
+    }
+
+    public void setFuelRange(int settedFuelRange){
+        fuelRange = settedFuelRange;
+    }
+
+    public void setTankCapacity(int settedTankCapacity){
+        tankCapacity = settedTankCapacity;
+    }
+
+    public void setCurrentGasAmount(int settedCurrentGasAmount){
+        currentGasAmount = settedCurrentGasAmount;
+    }
+
+    public void setMaxSpeed(int settedMaxSpeed){
+        maxSpeed = settedMaxSpeed;
+    }
+
+    public void setCurrentSpeed(int settedCurrentSpeed){
+        currentSpeed = settedCurrentSpeed;
+    }
+
+    public void setDriving(boolean settedDriving){
+        driving = settedDriving;
     }
 }
