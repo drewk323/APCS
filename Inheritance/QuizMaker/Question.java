@@ -1,8 +1,8 @@
 package QuizMaker;
 
 public class Question {
-    protected String text;
-    protected String answer;
+    private String text;
+    private String answer;
 
     public Question(){
         text = "";

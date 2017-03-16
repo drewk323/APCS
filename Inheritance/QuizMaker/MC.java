@@ -2,8 +2,8 @@ package QuizMaker;
 import java.util.ArrayList;
 
 public class MC extends Question{
-    protected int numChoices = 0;
-    protected ArrayList<String> choices;
+    private int numChoices = 0;
+    private ArrayList<String> choices;
 
     public void addChoice(String choice, boolean correct){
         choices.add(choice);
