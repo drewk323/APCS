@@ -2,11 +2,15 @@ package QuizMaker;
 import java.util.ArrayList;
 
 public class MC extends Question{
-    private int numChoices = 0;
     private ArrayList<String> choices;
+
+    public MC() {
+        choices = new ArrayList<String>();
+    }
 
     public void addChoice(String choice, boolean correct){
         choices.add(choice);
+        System.out.println("adding choice...");
         if (correct){
             String choiceString = "" + choices.size();
             setAnswer(choiceString);

@@ -6,9 +6,9 @@ public class QuizDemo {
         MC one = new MC();
         one.setText("What does HARIBO(Context of Candy) stand for?");
         one.addChoice("Harry Boff", false);
-        one.addChoice("Hans Riegal Bonn", true);
-        one.addChoice("Happy Rinse Board", false);
-        one.addChoice("Harrison Bach", false);
+        one.addChoice("Hans Riegel Bonn", true);
+        one.addChoice("Hans Regal Bon", false);
+        one.addChoice("Harrison Boch", false);
 
         presentQuestion(one);
     }
