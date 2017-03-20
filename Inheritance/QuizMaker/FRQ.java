@@ -8,7 +8,11 @@ public class FRQ extends Question{
         text = text.toLowerCase();
     }
 
-    if (text == "Ding"){
+    //if (text == "Ding"){
+    //    System.out.println("Your answer is correct.");
+    //}
+
+    public void Present(){
 
     }
 }
