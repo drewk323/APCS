@@ -1,4 +1,6 @@
-package ElevensGame;
+package ElevensGame.Activity1;
+
+import ElevensGame.Activity1.Card;
 
 /**
  * This is a class that tests the Card class.
@@ -17,13 +19,17 @@ public class CardTester {
         System.out.println(one.suit());
         System.out.println(one.rank());
         System.out.println(one.pointValue());
+        System.out.println(one.matches(two));
+        System.out.println(one.toString());
 
         System.out.println(two.suit());
         System.out.println(two.rank());
         System.out.println(two.pointValue());
+        System.out.println(two.matches(three));
 
         System.out.println(three.suit());
         System.out.println(three.rank());
         System.out.println(three.pointValue());
+        System.out.println(three.matches(two));
     }
 }
