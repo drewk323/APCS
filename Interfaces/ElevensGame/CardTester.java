@@ -10,6 +10,20 @@ public class CardTester {
      *	@param args is not used.
      */
     public static void main(String[] args) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+        Card one = new Card("One", "Spades", 1);
+        Card two = new Card("Four", "Spades", 4);
+        Card three = new Card("Four", "Spades", 4);
+
+        System.out.println(one.suit());
+        System.out.println(one.rank());
+        System.out.println(one.pointValue());
+
+        System.out.println(two.suit());
+        System.out.println(two.rank());
+        System.out.println(two.pointValue());
+
+        System.out.println(three.suit());
+        System.out.println(three.rank());
+        System.out.println(three.pointValue());
     }
 }
