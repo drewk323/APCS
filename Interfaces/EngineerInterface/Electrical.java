@@ -1,5 +1,7 @@
 package EngineerInterface;
 
-public class Electrical {
+public class Electrical implements Engineer{
+    public void useCad(boolean using){
 
+    }
 }
