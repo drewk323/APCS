@@ -8,6 +8,10 @@
       <sourceFolder url="file://$MODULE_DIR$/Main" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Interfaces" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Inheritance" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/Interfaces/ElevensGame/Activity1" />
+      <excludeFolder url="file://$MODULE_DIR$/Interfaces/ElevensGame/Activity2" />
+      <excludeFolder url="file://$MODULE_DIR$/Interfaces/ElevensGame/Activity3" />
+      <excludeFolder url="file://$MODULE_DIR$/Interfaces/EngineerInterface" />
       <excludeFolder url="file://$MODULE_DIR$/Interfaces/LabOne" />
     </content>
     <orderEntry type="inheritedJdk" />

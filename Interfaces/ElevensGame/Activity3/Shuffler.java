@@ -53,9 +53,15 @@ public class Shuffler{
             System.out.println();
         }
         System.out.println();
-        Flipper coin = new Flipper();
-        System.out.println(""coin.flip());
 
+        /** Coin flipper and print out*/
+        Flipper coin = new Flipper();
+        if (coin.flip() == 1) {
+            System.out.println("The coin landed on heads");
+        }
+        else if (coin.flip() == 2){
+            System.out.println("The coin landed on tails");
+        }
     }
 
 
