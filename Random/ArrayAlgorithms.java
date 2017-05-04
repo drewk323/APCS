@@ -119,13 +119,21 @@ public class ArrayAlgorithms {
         list3 = new ArrayList<>();
         int length = 5;
         int element3 = 0;
+        int element4 = 0;
 
         for (int i = 0; i < length; i++){
             list3.add(i);
         }
+        System.out.println("Before: " + list3);
         element3 = list3.get(3);
+        element4 = list3.get(1);
         list3.remove(3);
-        list3.add(1, 4);
+        list3.remove(1);
+        list3.add(1, element3);
+        list3.add(3, element4);
+        System.out.println("After: " + list3);
+
+        System.out.println(""); //Separator
 
         /** Copying elements in an array to another */
 
