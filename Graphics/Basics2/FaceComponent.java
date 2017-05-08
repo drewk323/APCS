@@ -16,7 +16,7 @@ public class FaceComponent extends JComponent
 
         // Draw the head
         Ellipse2D.Double head = new Ellipse2D.Double(5, 10, 150, 150);
-        //g2.setStroke(BasicStroke.CAP_BUTT);
+        g2.setStroke(new BasicStroke(5));
         g2.draw(head);
 
         // Draw the eyes
@@ -27,12 +27,8 @@ public class FaceComponent extends JComponent
         g2.fill(eye);
 
         // Draw the mouth
-        Line2D.Double mouth = new Line2D.Double(50, 110, 120, 110);
-        g2.setColor(Color.BLACK);
-        g2.draw(mouth);
-
-        QuadCurve2D.Float newMouth = new QuadCurve2D.Float(100, 100, 100, 100, 10, 10);
-        newMouth.setCurve(10, 10, 10, 10, 10, 10);
+        QuadCurve2D.Float newMouth = new QuadCurve2D.Float(50, 110, 50, 50, 20, 200);
+        newMouth.setCurve(50, 110, 100, 100, 140, 110);
         g2.setColor(Color.BLACK);
         g2.draw(newMouth);
 
