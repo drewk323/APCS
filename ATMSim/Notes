@@ -1,0 +1,39 @@
+ATM SIMULATOR
+
+Functions of ATM:
+- Withdraw
+- Deposit
+- Get Name of ATM
+- Get Account Number
+- Get PIN
+- Verify PIN
+- Verify Account Number
+- Initial Balance
+- Current Balance
+- Enter Account Number
+- Enter PIN
+- Get Name Associated With Account Number(Maybes)
+- Multiple Accounts(Maybes)
+- Have a Graphical Interface <------
+- Limited PIN entering attempts
+
+Methods:
+- withdraw
+- deposit
+- getATMName
+- getAccountNum
+- getPIN
+- verifyPIN
+- verifyAccountNum
+- getBalance
+- enterPIN
+- enterAccountNum
+- getClientName
+
+Variable:
+- accountNum
+- accountPIN
+- initialBalance
+- currentBalance
+- pinAttempts
+- clientName
