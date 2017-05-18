@@ -6,6 +6,7 @@ import java.awt.*;
  */
 
 //Videos to Watch
+    https://www.youtube.com/watch?v=eeE44RmE1FM (watch at 6:00min)
     https://www.youtube.com/watch?v=mH1TltI61yU
 
 public class ATMViewer {
