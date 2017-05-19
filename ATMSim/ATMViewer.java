@@ -6,8 +6,8 @@ import java.awt.*;
  */
 
 //Videos to Watch
-    https://www.youtube.com/watch?v=eeE44RmE1FM (watch at 6:00min)
-    https://www.youtube.com/watch?v=mH1TltI61yU
+    //https://www.youtube.com/watch?v=eeE44RmE1FM (watch at 6:00min)
+    //https://www.youtube.com/watch?v=mH1TltI61yU
 
 public class ATMViewer {
 
@@ -28,33 +28,50 @@ public class ATMViewer {
         window.setVisible(true);
         window.setBackground(Color.BLACK);
 
-        /** Panel A and contents */
+        /** Panel A setup */
+        JPanel panelA = new JPanel(new GridBagLayout());
+        panelA.setBackground(Color.GRAY);
+        window.add(panelA, BorderLayout.EAST);
 
-        JPanel panelA = new JPanel();
-        panelA.setLocation(0, 0);
-        panelA.setSize(200, 500);
-        panelA.setBackground(Color.RED);
-        panelA.setLayout(new GridBagLayout());
-        window.add(panelA);
+        /** Panel B setup */
+        JPanel panelB = new JPanel(new GridBagLayout());
+        panelB.setBackground(Color.YELLOW);
+        window.add(panelB, BorderLayout.NORTH);
+
+        /** Panel C setup */
+        JPanel panelC = new JPanel(new GridBagLayout());
+        panelC.setBackground(Color.WHITE);
+        window.add(panelC, BorderLayout.CENTER);
 
         /** Create button to get account balance */
-        JButton getBalanceButton = new JButton();
-        c.fill = GridBagConstraints.HORIZONTAL;
-        c.weightx = 0.5;
+        JButton getBalanceButton = new JButton("Get Current Balance");
+        getBalanceButton.setSize(300, 300);
+        c.insets = new Insets(10, 10, 30, 10);
         c.gridx = 0;
         c.gridy = 1;
-        getBalanceButton.setSize(120, 30);
         panelA.add(getBalanceButton, c);
 
         /** Create button to confirm both the PIN and Account Number */
-        JButton enterButton = new JButton();
-        c.fill = GridBagConstraints.HORIZONTAL;
-        c.weightx = 0.5;
+        JButton enterButton = new JButton("Enter");
         c.gridx = 0;
-        c.gridy = 0;
-        enterButton.setSize(120, 30);
+        c.gridy = 2;
         panelA.add(enterButton, c);
 
+        /** Create button to exit simulator */
+        JButton exitButton = new JButton("Exit");
+        c.gridx = 0;
+        c.gridy = 3;
+        panelA.add(exitButton, c);
+
+        JButton withdrawButton = new JButton("Withdraw");
+        c.gridx = 0;
+        c.gridy = 1;
+        panelC.add(withdrawButton, c);
+
+        JButton depositButton = new JButton("Deposit");
+        c.gridx = 0;
+        c.gridy = 2;
+        panelC.add(depositButton);
 
     }
 
