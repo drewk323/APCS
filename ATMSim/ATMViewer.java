@@ -80,10 +80,13 @@ public interface ATMViewer {
         c.gridy = 2;
         panelC.add(depositButton);
 
+        balanceButton.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+
+            }
+        });
+
     }
     /**---------------|Button Functions|---------------*/
-
-    public class ATMViewer{
-    }
 
 }
