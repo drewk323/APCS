@@ -1,21 +1,17 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
 /**
  * ATM simulator viewer and UI
  */
 
-//Videos to Watch
-    //https://www.youtube.com/watch?v=mH1TltI61yU
+public class ATMViewer extends JFrame {
 
-public interface ATMViewer {
+    private static final int WIDTH = 1920;
+    private static final int HEIGHT = 1080;
 
-    static final int WIDTH = 1920;
-    static final int HEIGHT = 1080;
-
-    public static void main(String[] args){
-
-        ATM A = new ATM();
+    public static void main(String[] args) {
         GridBagConstraints c = new GridBagConstraints();
 
         /**--------------------|Create the UI Window|--------------------*/
@@ -68,11 +64,15 @@ public interface ATMViewer {
         c.gridy = 3;
         panelA.add(exitButton, c);
 
+        /** Create button to withdraw money */
+
         JButton withdrawButton = new JButton("Withdraw");
         withdrawButton.setPreferredSize(new Dimension(120, 30));
         c.gridx = 0;
         c.gridy = 1;
         panelC.add(withdrawButton, c);
+
+        /** Create button to deposit money */
 
         JButton depositButton = new JButton("Deposit");
         depositButton.setPreferredSize(new Dimension(120, 30));
@@ -80,13 +80,31 @@ public interface ATMViewer {
         c.gridy = 2;
         panelC.add(depositButton);
 
-        balanceButton.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e){
+        /**---------------|Text Displays|---------------*/
 
-            }
-        });
+        JLabel balanceText = new JLabel("Current Balance: $0");
+        balanceText.setPreferredSize(new Dimension(120, 30));
+        c.gridx = 0;
+        c.gridy = 3;
+        panelC.add(balanceText);
+
+        JLabel clientText = new JLabel("Name: Unknown");
+        clientText.setPreferredSize(new Dimension(120, 30));
+        c.gridx = 1;
+        c.gridy = 1;
+        panelC.add(clientText);
 
     }
-    /**---------------|Button Functions|---------------*/
 
+    /**---------------|Button Functions|---------------*/
+    private class exit implements ActionListener {
+        public void actionPerformed(ActionEvent event) {
+            if (event.getSource() == exitButton){
+                System.out.println("Something");
+            }
+
+        }
+    }
+
+    ActionListener listener1 = new ActionListener;
 }
