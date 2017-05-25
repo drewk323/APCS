@@ -6,13 +6,18 @@ import java.awt.event.*;
  * ATM simulator viewer and UI
  */
 
+//refer to https://docs.oracle.com/javase/7/docs/api/java/awt/GridBagLayout.html
+    //https://docs.oracle.com/javase/tutorial/uiswing/layout/gridbag.html
+
 public class ATMViewer extends JFrame {
 
     private static final int WIDTH = 1920;
     private static final int HEIGHT = 1080;
 
     public static void main(String[] args) {
+        ATM alpha = new ATM();
         GridBagConstraints c = new GridBagConstraints();
+        c.fill = GridBagConstraints.BOTH;
 
         /**--------------------|Create the UI Window|--------------------*/
         JFrame window = new JFrame();
@@ -23,22 +28,25 @@ public class ATMViewer extends JFrame {
         window.setVisible(true);
         window.setBackground(Color.BLACK);
 
-        /** Panel A setup */
+        /** Panel A setup (side panel for minor functions)*/
         JPanel panelA = new JPanel(new GridBagLayout());
         panelA.setPreferredSize(new Dimension(200, 1080));
         panelA.setBackground(Color.GRAY);
         window.add(panelA, BorderLayout.EAST);
 
-        /** Panel B setup */
+        /** Panel B setup (background for main interactions) */
         JPanel panelB = new JPanel(new GridBagLayout());
-        panelB.setBackground(Color.YELLOW);
-        window.add(panelB, BorderLayout.NORTH);
+        panelB.setPreferredSize(new Dimension(800, 800));
+        panelB.setBackground(Color.RED);
+        window.add(panelB, BorderLayout.CENTER);
+        c.weightx = 1.0;
+        c.weighty = 1.0;
 
-        /** Panel C setup */
+        /** Panel C setup (main buttons)*/
         JPanel panelC = new JPanel(new GridBagLayout());
-        panelC.setPreferredSize(new Dimension(1920, 1080));
-        panelC.setBackground(Color.WHITE);
-        window.add(panelC, BorderLayout.CENTER);
+        panelC.setPreferredSize(new Dimension(500, 500));
+        panelC.setBackground(Color.YELLOW);
+        panelB.add(panelC, BorderLayout.CENTER);
 
         /** Create button to get account balance */
         JButton balanceButton = new JButton("Get Current Balance");
@@ -86,25 +94,64 @@ public class ATMViewer extends JFrame {
         balanceText.setPreferredSize(new Dimension(120, 30));
         c.gridx = 0;
         c.gridy = 3;
-        panelC.add(balanceText);
+        panelB.add(balanceText);
 
         JLabel clientText = new JLabel("Name: Unknown");
         clientText.setPreferredSize(new Dimension(120, 30));
-        c.gridx = 1;
-        c.gridy = 1;
-        panelC.add(clientText);
+        c.gridx = 0;
+        c.gridy = 4;
+        panelB.add(clientText);
 
-    }
+        JLabel multiuseText = new JLabel("Multiuse Text");
+        clientText.setPreferredSize(new Dimension(120, 30));
+        c.gridx = 0;
+        c.gridy = 5;
+        panelB.add(multiuseText);
 
-    /**---------------|Button Functions|---------------*/
-    private class exit implements ActionListener {
-        public void actionPerformed(ActionEvent event) {
-            if (event.getSource() == exitButton){
-                System.out.println("Something");
+        JLabel depositText = new JLabel("Please Enter Amount");
+        depositText.setPreferredSize(new Dimension(100, 30));
+        c.gridx = 0;
+        c.gridy = 6;
+        panelA.add(depositText);
+
+        /**---------------|Button Functions|---------------*/
+        class depositFunction implements ActionListener {
+            public void actionPerformed(ActionEvent event) {
+                System.out.println(depositText.getText());
+                System.out.println("Money deposited");
             }
-
         }
-    }
 
-    ActionListener listener1 = new ActionListener;
+        class withdrawFunction implements ActionListener {
+            public void actionPerformed(ActionEvent event) {
+                System.out.println("Money withdrawn");
+            }
+        }
+
+        class enterFunction implements ActionListener {
+            public void actionPerformed(ActionEvent event) {
+                System.out.println("Pin and Account Number Confirmed");
+            }
+        }
+
+        class exitFunction implements ActionListener {
+            public void actionPerformed(ActionEvent event) {
+                window.dispose();
+                System.out.println("Simulator closed");
+            }
+        }
+
+        class balanceFunction implements ActionListener {
+            public void actionPerformed(ActionEvent event) {
+                balanceText.setText("Current Balance: $" + alpha.getBalance());
+                System.out.println("Balance taken");
+            }
+        }
+
+        balanceButton.addActionListener(new balanceFunction());
+        depositButton.addActionListener(new depositFunction());
+        withdrawButton.addActionListener(new withdrawFunction());
+        enterButton.addActionListener(new enterFunction());
+        exitButton.addActionListener(new exitFunction());
+    }
 }

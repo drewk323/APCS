@@ -9,41 +9,53 @@ public class ATM {
     private static final String CLIENT_NAME = "Drew";
 
     private int balance = 0;
+    private int enterAttempts = 5;
     private int temporaryPIN;
     private int temporaryAccountNumber;
+    private int depositAmount;
 
     private boolean verifiedPIN = false;
     private boolean verifiedAccountNumber = false;
 
-    private int getBalance(){
+    public int getBalance(){
         return balance;
     }
 
-    private int getPIN(){
+    public int getPIN(){
         return PIN;
     }
 
-    private int getAccountNumber(){
+    public int getAccountNumber(){
         return ACCOUNT_NUMBER;
     }
 
-    private String getClientName() {
+    public int getDepositAmount(){
+        return depositAmount;
+    }
+
+    public void depositMoney(){
+        if (depositAmount != 0){
+            balance += depositAmount;
+        }
+    }
+
+    public String getClientName() {
         return CLIENT_NAME;
     }
 
-    private void setPIN(int newPIN){
+    public void setPIN(int newPIN){
         temporaryPIN = newPIN;
     }
 
-    private void setAccountNumber(int newAccountNumber){
+    public void setAccountNumber(int newAccountNumber){
         temporaryAccountNumber = newAccountNumber;
     }
 
-    private boolean isVerifiedPIN(){
+    public boolean isVerifiedPIN(){
         return verifiedPIN;
     }
 
-    private boolean isVerifiedAccountNumber(){
+    public boolean isVerifiedAccountNumber(){
         return verifiedAccountNumber;
     }
 
